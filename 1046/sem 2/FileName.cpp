@@ -130,7 +130,7 @@ public:
 	}
 
 	void setNrVenituri(int nrVenituri) {
-		nrVenituri = nrVenituri;
+		this->nrVenituri = nrVenituri;
 	}
 
 	double* getVenituri() {
@@ -140,7 +140,9 @@ public:
 	void setVenituri(int nrVenituri, double* venituri) {
 		this->nrVenituri = nrVenituri;
 
-		delete[] venituri; //evitare memory leaks
+		if (this->venituri != nullptr) {
+			delete[] this->venituri; //evitare memory leaks
+		}
 
 		this->venituri = new double[nrVenituri];
 		for (int i = 0;i < nrVenituri; i++) {
