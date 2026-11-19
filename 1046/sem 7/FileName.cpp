@@ -155,7 +155,7 @@ public:
 
 	//op []
 	string operator[](int index) {
-		if (index<0 || index > nrAlimente) {
+		if (index<0 || index >= nrAlimente) {
 			cout << "indexul dat este < 0 sau > nrAlimnete\n";
 			return "nimic";
 		}
